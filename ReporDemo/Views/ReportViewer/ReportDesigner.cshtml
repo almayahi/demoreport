@@ -1,0 +1,41 @@
+﻿@using Stimulsoft.Report;
+@using Stimulsoft.Report.Mvc;
+
+@{
+    ViewData["Title"] = "Report Designer";
+}
+
+
+
+<table>
+    <tr>
+        <td class="reports" valign="top">
+            <div style="width: 100px;">
+
+            </div>
+        </td>
+        <td style="width: 100%;" valign="top">
+
+
+
+            @*Report Designer*@
+            @Html.StiNetCoreDesigner(new StiNetCoreDesignerOptions()
+       {
+           Actions =
+            {
+            GetReport = "ReportDesigner",
+            PreviewReport = "PreviewReport",
+            DesignerEvent = "DesignerEvent"
+
+            },
+           Localization = "Localization/en.xml",
+           LocalizationDirectory = "Localization"
+       })
+
+        </td>
+    </tr>
+</table>
+
+
+
+

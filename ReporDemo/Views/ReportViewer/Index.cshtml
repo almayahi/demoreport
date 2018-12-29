@@ -1,0 +1,46 @@
+﻿@using Stimulsoft.Report;
+@using Stimulsoft.Report.Mvc;
+
+<table>
+    <tr>
+        <td class="reports" valign="top">
+            <div style="width: 100px;">
+
+            </div>
+        </td>
+        <td style="width: 100%;" valign="top">
+
+            @Html.StiNetCoreViewer(new StiNetCoreViewerOptions()
+           {
+
+           Actions =
+           {
+           GetReport = "GetReport",
+           //GetReportData = "GetReportData",
+           //EmailReport = "EmailReport",
+           //Interaction = "Interaction",
+           ViewerEvent = "ViewerEvent"
+           },
+           Toolbar =
+           {
+           ShowAboutButton=false
+           //ShowSendEmailButton = true
+           , ShowParametersButton=false
+           }
+           })
+
+            @* Report Designer
+                            @Html.StiNetCoreDesigner(new StiNetCoreDesignerOptions()
+                    {
+                        Actions =
+                {
+                GetReport = "GetReport",
+                PreviewReport = "PreviewReport",
+                DesignerEvent = "DesignerEvent"
+
+                }
+                    })
+            *@
+        </td>
+    </tr>
+</table>
